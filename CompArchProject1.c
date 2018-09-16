@@ -202,6 +202,10 @@ int ques7(int x) {
     return x & (~x+1);
 }
 
+int ans7(int x) {
+	
+    return x & (~x+1); //takes x and 2's complement of x and returns the GCF of both decimal versions of the numbers
+ }  
 
 /* question 8 */
 int ques8(int x) {
