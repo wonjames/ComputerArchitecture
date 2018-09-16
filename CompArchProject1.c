@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /* 
-Group number: 
-Team members: 
+Group number: 2
+Team members: James Won, Karen Mani, Sasha Smolyansky
 */
 
 /* PROJECT 1 */
