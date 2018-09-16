@@ -186,10 +186,28 @@ int ques7(int x) {
 
 /* question 8 */
 int ques8(int x) {
+    // if input is positive, y is 0
+    // if input is negative, y is -1
+    // if input is 0, y is 0
     int y = x >> 31;
+  
+    // if input is positive/negative, z is 1
+    // if input is 0, z is 0
     int z = !!x;
 
+    // positive input: 0 OR 1 returns 1
+    // negative input: -1 OR 1 returns -1
+    // 0 input: 0 OR 0 returns 0
     return y | z;
+}
+
+int ans8(int x) {
+  // if x is positive, return 1
+  if (x > 0) return 1;
+  // if x is 0, return 0
+  else if (x == 0) return 0;
+  // if x is negative, return -1
+  else if (x < 0) return -1;
 }
 
 /* question 9 */
