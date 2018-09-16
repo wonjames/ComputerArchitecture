@@ -203,6 +203,40 @@ int ques11(int x, int y) {
     return !((!a & b) | (!(a ^ b) & (y+~x)>>31));
 }
 
+int ans11(int x, int y)
+{
+  
+  if(x>0 || x==0) //when input x is either 0 or positive
+  {
+    if(y==0 || y<0) //if y’s input is either 0 or negative
+    {
+      return 0; //code will return a 0
+    }
+    else if(y>0) //but if y is positive
+    {
+      return 1; //code will return a 1
+    }
+  }
+ if(x<0) //when input x is negative
+  {
+    if(y==0 || y>0) //if y’s input is 0 or positive
+    {
+      return 1; //code will return a 1
+    }
+    else if(y<0) //but if y is negative
+    {
+      if(x>y) //and x is greater than y
+      {
+        return 0; //code will return a 0
+      }
+      else
+      {
+        return 1; //otherwise code returns a 1
+      }
+    }
+  } 
+}
+
 
 /* question 12 */
 int ques12(int x, int m, int n) {
