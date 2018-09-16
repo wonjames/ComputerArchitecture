@@ -164,7 +164,7 @@ int main()
     /*
         depending on how many inputs, use the method call with the right number of parameters
     */
-    t1 = ques4(2);
+    t1 = ques4(0);
     //t2 = ques9(x, y, z);
     //t3 = ques11(x,y);
     printf("Answer for Question: %d", t1);

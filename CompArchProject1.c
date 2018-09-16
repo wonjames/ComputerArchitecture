@@ -130,7 +130,8 @@ int ques4(int n) {
     //shifts y to the left by n-1 amount
     y = y >> (n + (~0));
 
-    //x & y divides x by 2^n-1
+    //x & y 
+    //divides y by 2^n-1
     return x & y;
 }
 
