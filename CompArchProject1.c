@@ -162,6 +162,7 @@ int ques5(int x) {
     //if x is odd then result is 1000...0000
     //if x is even then result is 0000....0000
     int result = (x<<31);
+    
     //if result is 1000....0000 (i.e. odd) then the number will be 1111....1111
     //if result is 0000....0000 (i.e. even) then the number will be 0000....0000
     result = (result >> 31);
@@ -169,6 +170,19 @@ int ques5(int x) {
     //will return either -1 or 0 depending on if its even or odd
     return result;
 
+}
+
+int ans5(int x)
+{
+    if(x % 2 == 0)
+    {
+        return 0;
+    }
+
+    if(x % 2 == 1)
+    {
+        return -1;
+    }
 }
 
 /* question 6 */
