@@ -370,6 +370,12 @@ int ques15(int x, int n) {
     return (z & x);
 }
 
+int ans15(int x, int n) {
+   if (n ==0) return 0;
+   else if (0 <= x < n) return x;
+   else if (x > n) return n;
+   // else if (x < 0 && n > 0) return x; **CHANGE**
+}
 
 
 
