@@ -100,39 +100,13 @@ int ques2(int x) {
     return (y+z);
 }
 
-/* question 2 answer */
-int ans2(int x) {
-  // the output is just the absolute value of the input x
-  return abs(x);
-}
-
 /* question 3 */
-int ques3(int x) {
-    //if you 'NOT' a nonzero number, you get 0
-    // if you 'NOT' zero, you get 1
+int ques3(int x){
     int y = !x;
-    
-    // if the number is positive or 0 (leftmost bit = 0), z = 0
-    // if the number is negative (leftmost bit = 1), z = -1 (all 1's in binary)
     int z = x >> 31;
-  
-    // 'OR' function, if z & y are both 0, z = 0
-    // otherwise, z = 1
     z = z | y;
 
-    // returns 'NOT' z
-    // if z & y both equal 0, returns 1
-    // otherwise, the return function returns 0
     return !z;
-}
-
-/* question 3 answer */
-int ans3(int x) {
-  // if x is positive, return 1
-  if (x > 0) return 1;
-  
-  // if x is negative or 0, return 0
-  else return 0;
 }
 
 /* question 4 */
@@ -165,30 +139,11 @@ int ques4(int n) {
 /* question 5 */
 
 int ques5(int x) {
-    //if x is odd then result is 1000...0000
-    //if x is even then result is 0000....0000
     int result = (x<<31);
-    
-    //if result is 1000....0000 (i.e. odd) then the number will be 1111....1111
-    //if result is 0000....0000 (i.e. even) then the number will be 0000....0000
     result = (result >> 31);
 
-    //will return either -1 or 0 depending on if its even or odd
     return result;
 
-}
-
-int ans5(int x)
-{
-    if(x % 2 == 0)
-    {
-        return 0;
-    }
-
-    if(x % 2 == 1)
-    {
-        return -1;
-    }
 }
 
 /* question 6 */
@@ -207,11 +162,6 @@ int ques7(int x) {
 
     return x & (~x+1);
 }
-
-int ans7(int x) {
-	
-    return x & (~x+1); //takes x and 2's complement of x and returns the GCF of both decimal versions of the numbers
- }  
 
 
 /* question 8 */
@@ -290,14 +240,24 @@ int ans11(int x, int y)
 
 /* question 12 */
 int ques12(int x, int m, int n) {
-    int a = ~m+1;
-    int b = ~x +1;
-    a = x + a;
-    b = b + n;
+    int a = ~m+1; //takes 2's complement of input m
+    int b = ~x +1; //takes 2's complement of input x
+    a = x + a; //does x-m in adding x+a since 2's complement of m produces -m
+    b = b + n; //adds b + n or n-x because 2's complement produces -x
 
-    return !((a|b) >> 31);
+    return !((a|b) >> 31); //OR's a and b and shifts 31 positions, then inverts that value
 }
 
+int ans12(int x, int m, int n) {
+   if(x>m) { //if m<x<n, code will return 0 otherwise it will return 1
+     if(n>x) {
+       return 0;
+     }
+   }
+   else {
+       return 1;
+     }
+   }
 /* question 13 */
 
 int ques13(int x) {
