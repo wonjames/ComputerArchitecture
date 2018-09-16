@@ -101,12 +101,32 @@ int ques2(int x) {
 }
 
 /* question 3 */
-int ques3(int x){
+int ques3(int x) {
+    //if you 'NOT' a nonzero number, you get 0
+    // if you 'NOT' zero, you get 1
     int y = !x;
+    
+    // if the number is positive or 0 (leftmost bit = 0), z = 0
+    // if the number is negative (leftmost bit = 1), z = -1 (all 1's in binary)
     int z = x >> 31;
+  
+    // 'OR' function, if z & y are both 0, z = 0
+    // otherwise, z = 1
     z = z | y;
 
+    // returns 'NOT' z
+    // if z & y both equal 0, returns 1
+    // otherwise, the return function returns 0
     return !z;
+}
+
+/* question 3 answer */
+int ans3(int x) {
+  // if x is positive, return 1
+  if (x > 0) return 1;
+  
+  // if x is negative or 0, return 0
+  else return 0;
 }
 
 /* question 4 */
