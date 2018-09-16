@@ -100,6 +100,12 @@ int ques2(int x) {
     return (y+z);
 }
 
+/* question 2 answer */
+int ans2(int x) {
+  // the output is just the absolute value of the input x
+  return abs(x);
+}
+
 /* question 3 */
 int ques3(int x) {
     //if you 'NOT' a nonzero number, you get 0
@@ -201,6 +207,11 @@ int ques7(int x) {
 
     return x & (~x+1);
 }
+
+int ans7(int x) {
+	
+    return x & (~x+1); //takes x and 2's complement of x and returns the GCF of both decimal versions of the numbers
+ }  
 
 
 /* question 8 */
