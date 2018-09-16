@@ -1,16 +1,6 @@
 #include <stdio.h>
 
-int ques1(int x) {
-    if(x == 0)
-    {
-        return 1;
-    }
-    else 
-    {
-        return 0;
-    }
 
-}
 
 /* question 2 */
 int ques2(int x) {
@@ -33,8 +23,11 @@ int ques3(int x){
 /* question 4 */
 /* Assume 0 <= n <= 32 */
 int ques4(int n) {
+    
     int x = (!!n) << 31;
+    
     x = x >> 31;
+
     int y = (1 << 31);
     y = y >> (n + (~0));
 
@@ -171,7 +164,7 @@ int main()
     /*
         depending on how many inputs, use the method call with the right number of parameters
     */
-    t1 = ques1(1);
+    t1 = ques4(2);
     //t2 = ques9(x, y, z);
     //t3 = ques11(x,y);
     printf("Answer for Question: %d", t1);

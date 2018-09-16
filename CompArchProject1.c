@@ -79,6 +79,17 @@ int ques1(int x) {
     return (z & 1);
 
 }
+int ans1(int x) {
+    if(x == 0)
+    {
+        return 1;
+    }
+    else 
+    {
+        return 0;
+    }
+
+}
 
 /* question 2 */
 int ques2(int x) {
@@ -101,11 +112,25 @@ int ques3(int x){
 /* question 4 */
 /* Assume 0 <= n <= 32 */
 int ques4(int n) {
+    //!! makes the number either 1 or 0
+    //(!!n) = 1 if n is 1 <= n <= 32
+    //(!!n) = 0 if n is 0
+    //shifts the number to the left 31 bits
+    //if (!!n) = 1 then the number will be 1000...0000
+    //else it will be 0000....0000
     int x = (!!n) << 31;
+
+    //shifting it back will make it 1111...1111 if (!!n) = 1
+    //or 0000.....0000 if (!!n) = 0
     x = x >> 31;
+    
+    //int y = 1000...0000
     int y = (1 << 31);
+
+    //shifts y to the left by n-1 amount
     y = y >> (n + (~0));
 
+    //x & y divides x by 2^n-1
     return x & y;
 }
 
@@ -255,8 +280,8 @@ main(){
 	printf("you entered a= %d b= %d  c=%d\n", a,b,c);
 
 
-	t1=ques9(a, b, c);
-	printf("output of ques3 is t1 = %d  \n", t1);
+	t1=ques4(a);
+	printf("output of ques4 is t1 = %d  \n", t1);
     /* To test/run the functions, you will need to input numbers and then call each of the functions, and print the return value */
 
 
