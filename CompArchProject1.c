@@ -77,11 +77,11 @@ int ques1(int x) {
     //AND by 1 will only make the last bit become 1 if in z the last bit is 1.
     //the answer will be 1 when x started off as 0, and will be 0 for any other number
     return (z & 1);
-
 }
+
+/* question 1 answer */
 int ans1(int x) {
-    if(x == 0)
-    {
+    if(x == 0) {
         return 1;
     }
     else 
@@ -98,6 +98,12 @@ int ques2(int x) {
     int z = (~mask + 1);
 
     return (y+z);
+}
+
+/* question 2 answer */
+int ans2(int x) {
+  // the output is just the absolute value of the input x
+  return abs(x);
 }
 
 /* question 3 */
