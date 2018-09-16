@@ -42,7 +42,8 @@ To run the code to test your function, you will need to insert appropriate C cod
 /*  function ques0 returns 1 if x=y and returns 0 if x is not equal to y */
 /* the function ans0 does the same in two C statements */
 
-int ques0(int x, int y){
+int ques0(int x, int y)
+{
     int temp;
     temp = ~y;
     temp = temp +1;
@@ -64,16 +65,23 @@ int ans0(int x, int y){
 /* question 1 */
 int ques1(int x) {
     int z;
+    //twos complement of x
     int y  = ~x+1;
+    //z is always going to start with 0 unless x = 0
+    //because of two's complement
     z= (~(y|x));
+    //shift a number that starts with 0, 31 times will always be 0
+    //if the number starts with 1 then it will be all 1's
     z = (z >> 31);
 
+    //AND by 1 will only make the last bit become 1 if in z the last bit is 1.
+    //the answer will be 1 when x started off as 0, and will be 0 for any other number
     return (z & 1);
 
 }
 
 /* question 2 */
-int ques2(x) {
+int ques2(int x) {
     int mask = x>>31;
     int y= (x ^ mask);
     int z = (~mask + 1);
@@ -230,7 +238,7 @@ int ques15(int x, int n) {
 
 int
 main(){
-    int a, b;
+    int a, b, c;
 
     int t1;
 
@@ -239,14 +247,16 @@ main(){
 	printf("\n");
  	printf("Enter second number, an integer stored into variable B preferably between 1 and 20:");
  	scanf ("%d", &b);
+    printf("Enter third number, an integer stored into variable C preferably between 1 and 20:");
+ 	scanf ("%d", &c);
 	printf("\n");
 
 
-	printf("you entered a= %d b= %d  \n", a,b);
+	printf("you entered a= %d b= %d  c=%d\n", a,b,c);
 
 
-	t1=ques0(a,b);
-	printf("output of ques0 is t1 = %d  \n", t1);
+	t1=ques9(a, b, c);
+	printf("output of ques3 is t1 = %d  \n", t1);
     /* To test/run the functions, you will need to input numbers and then call each of the functions, and print the return value */
 
 
