@@ -93,10 +93,16 @@ int ans1(int x) {
 
 /* question 2 */
 int ques2(int x) {
+	// if the input is negative, the mask is -1
+	// if the input is 0 or positive, the mask is 0
     int mask = x>>31;
+	// input 'XOR'ed with the mask (either 0 or -1)
     int y= (x ^ mask);
+	// if the mask is -1, z equals 1
+	// if the mask is 0, z equals 0
     int z = (~mask + 1);
 
+	// return (y+z)
     return (y+z);
 }
 
