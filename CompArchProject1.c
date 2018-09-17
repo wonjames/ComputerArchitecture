@@ -354,6 +354,17 @@ int ques13(int x) {
     return x;
 }
 
+int ans13(int x)
+{
+  int cursor = 0;
+  while (x)
+  {
+    cursor += 1; //searches for if there is a 1 in the binary number and sums up number of them
+    x >>= 1; //shifts to next bit to search again
+  }
+  return cursor;
+}
+
 /* question 14 */
 int ques14(int x) {
     int result = 0;
