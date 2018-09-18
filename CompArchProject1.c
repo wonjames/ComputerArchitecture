@@ -391,6 +391,7 @@ int ques15(int x, int n) {
 
 int ans15(int x, int n) {
 	// function returns x mod 2^n (what temp was set to in original code)
+	// returning x mod 2^n means returning the remainder of the division x/2^n
 	return (x % (1 << n));
 }
 
