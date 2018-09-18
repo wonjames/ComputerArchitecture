@@ -399,11 +399,9 @@ int ques15(int x, int n) {
 }
 
 int ans15(int x, int n) {
-  if (x < 0) {
-    return abs(x % (1 << n));
-  } else {
-	return (x % (1 << n));
-  }
+  if (x < 0) return abs(x % (1 << n));
+  else return (x % (1 << n));
+}
 
 
 
