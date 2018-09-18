@@ -168,6 +168,7 @@ int ques4(int n) {
 }
 
 
+
 /* question 5 */
 
 int ques5(int x) {
@@ -206,7 +207,10 @@ int ques6(void) {
     return word | word<<16;
 }
 
-
+int ans6()
+{
+	return(1431655765);
+}
     /* question 7 */
 
 int ques7(int x) {
@@ -387,6 +391,17 @@ int ques14(int x) {
     return result;
 }
 
+int ans14(int x){
+  int count = 0; 
+  while(x){
+    count += x&1;
+    x >>=1;
+  }
+  if (count % 2 == 1) return 1;
+  else return 0;
+  
+}
+
 /* question 15 */
 
 int ques15(int x, int n) {
@@ -399,9 +414,11 @@ int ques15(int x, int n) {
 }
 
 int ans15(int x, int n) {
-  if (x < 0) return abs(x % (1 << n));
-  else return (x % (1 << n));
-}
+  if (x < 0) {
+    return abs(x % (1 << n));
+  } else {
+	return (x % (1 << n));
+  }
 
 
 
