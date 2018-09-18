@@ -260,14 +260,11 @@ int ques11(int x, int y) {
 /* question 11 answer */
 int ans11(int x, int y) {
   //when input x is either 0 or positive
-  if (x >= 0 && y >= 0) {
-     x = 0;
-     y = 0;
+  if (x >= 0 && y >= 0 && x < y) {
+     return 1;
   } else {
-     x = -1;
-     y = -1;
+     return 0;
   }
-  return (x && !y);
 
 }
 
