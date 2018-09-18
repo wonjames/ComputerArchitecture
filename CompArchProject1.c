@@ -413,11 +413,13 @@ int ques14(int x) {
 
 int ans14(int x){
   int temp = 0; 
+  int count;
   while(x)
   {
     count += x & 1;
-    x >> = 1;
+    x >> 1;
   }
+
   if (count % 2 == 1) 
   {
 	  return 1;
@@ -426,6 +428,7 @@ int ans14(int x){
   {
 	  return 0;
   }
+  return 0;
   
 }
 
@@ -450,7 +453,7 @@ int ans15(int x, int n) {
 	 // if x >= 0,  x mod 2^n
 	return (x % (1 << n));
   }
-
+}
 
 
 int
@@ -472,7 +475,7 @@ main(){
 	printf("you entered a= %d b= %d  c=%d\n", a,b,c);
 
 
-	t1=ques4(a);
+	t1=ques1(a);
 	printf("output of ques4 is t1 = %d  \n", t1);
     /* To test/run the functions, you will need to input numbers and then call each of the functions, and print the return value */
 
