@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
 /* 
 Group number: 2
@@ -407,16 +410,20 @@ int ans14(int x){
 int ques15(int x, int n) {
     /* for ques15 only, assume n is not a negative number  */
 
-    int temp = (1 << n);
+// temp is set to 2^n
+    int temp = (1 << n); 
+// z is set to temp minus 1, in other words, z equals 2^n - 1
     int z = temp + ~0;
-
+// the 'AND' between z & x is x mod 2^n, essentially the remainder of x/2^n or x/temp
     return (z & x);
 }
 
 int ans15(int x, int n) {
   if (x < 0) {
+	  // if x < 0, absolute value x mod 2^n 
     return abs(x % (1 << n));
-  } else {
+  } else { 
+	 // if x >= 0,  x mod 2^n
 	return (x % (1 << n));
   }
 
