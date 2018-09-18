@@ -248,7 +248,7 @@ int ans8(int x) {
 /* question 9 */
 
 int ques9(int x, int n, int c) {
-    int n8 = n << 3;
+    int n8 = n << 3; //calculates number of bits in a byte when multiplying by 8
     int mask = 0xff << n8;
     int cshift = c << n8;
     int z= (x & ~mask);
@@ -266,6 +266,16 @@ int ques10(int x) {
     return y & z;
 }
 
+int ans10(int x) {
+  if(x==0)
+  {
+    return x;
+  }
+  else
+  {
+    return(!x);
+  }
+}
 
 /* question 11 */
 
@@ -331,6 +341,7 @@ int ans12(int x, int m, int n) {
        return 1;
      }
    }
+
 /* question 13 */
 
 int ques13(int x) {
@@ -381,18 +392,17 @@ int ques14(int x) {
 int ques15(int x, int n) {
     /* for ques15 only, assume n is not a negative number  */
 
-// set the temp to 2^n (n cannot be negative)
     int temp = (1 << n);
-// if n = 0, z is -1, otherwise z = 2^(n-1)
     int z = temp + ~0;
-// the output returns x modulus 2^n, if x is less than temp, return x
+
     return (z & x);
 }
 
 int ans15(int x, int n) {
-	// function returns x mod 2^n (what temp was set to in original code)
-	// returning x mod 2^n means returning the remainder of the division x/2^n
-	return (x % (1 << n));
+   if (n ==0) return 0;
+   else if (0 <= x < n) return x;
+   else if (x > n) return n;
+   // else if (x < 0 && n > 0) return x; **CHANGE**
 }
 
 
