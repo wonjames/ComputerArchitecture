@@ -169,6 +169,23 @@ int ques4(int n) {
     //divides y by 2^n-1
     return x & y;
 }
+int ans4(int n)
+{
+    int y = -2147483648;
+    int value = n-1;
+    double power;
+    power = pow(2,value);
+    if(n == 0)
+    {
+        return 0;
+    }
+
+    else
+    {
+        y = y / power;
+        return y;
+    }
+}
 
 
 
@@ -395,13 +412,20 @@ int ques14(int x) {
 }
 
 int ans14(int x){
-  int count = 0; 
-  while(x){
-    count += x&1;
-    x >>=1;
+  int temp = 0; 
+  while(x)
+  {
+    count += x & 1;
+    x >> = 1;
   }
-  if (count % 2 == 1) return 1;
-  else return 0;
+  if (count % 2 == 1) 
+  {
+	  return 1;
+  }
+  else 
+  {
+	  return 0;
+  }
   
 }
 
