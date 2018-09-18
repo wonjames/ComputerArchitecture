@@ -1,6 +1,7 @@
 # Computer Architecture
 
 Group number: 2
+\n
 Team members: 
 Sasha Smolyansky,
 James Won,
