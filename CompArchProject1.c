@@ -221,7 +221,7 @@ int ques9(int x, int n, int c) {
 
 /* question 9 answer */
 int ans9(int x, int n, int c) {
-  int y = n<<3
+  int y = n<<3;
   int mask = 0xff << y;
   int cshift = c << y;
   int z = (x & ~mask);
@@ -254,34 +254,15 @@ int ques11(int x, int y) {
 /* question 11 answer */
 int ans11(int x, int y) {
   //when input x is either 0 or positive
-  if(x>0 || x==0) {
-    //if y’s input is either 0 or negative
-    if(y==0 || y<0) {
-      //code will return a 0
-      return 0; 
-    //but if y is positive
-    } else if(y>0) {
-      //code will return a 1
-      return 1;
-    }
+  if (x >= 0 && y >= 0) {
+     x = 0;
+     y = 0;
+  } else {
+     x = -1;
+     y = -1;
   }
-  //when input x is negative
-  if(x<0) {
-    //if y’s input is 0 or positive
-    if(y==0 || y>0) {
-      //code will return a 1
-      return 1; 
-    //but if y is negative
-    } else if(y<0) {
-      //and x is greater than y
-      if(x>y) {
-        //code will return a 0
-        return 0; 
-      } else {
-        return 1; //otherwise code returns a 1
-      }
-    }
-  } 
+  return (x && !y);
+
 }
 
 /* question 12 */
@@ -296,14 +277,9 @@ int ques12(int x, int m, int n) {
 
 /* question 12  answer*/
 int ans12(int x, int m, int n) {
-   if(x>m) { //if m<x<n, code will return 0 otherwise it will return 1
-     if(n>x) {
-       return 0;
-     }
-   } else {
-      return 1;
-   }
+   return (n >= x && x >= m);
 }
+
 
 /* question 13 */
 int ques13(int x) {
@@ -330,7 +306,7 @@ int ques13(int x) {
 int ans13(int x) {
   int cursor = 0;
   while (x) {
-    cursor += 1; //searches for if there is a 1 in the binary number and sums up number of them
+    cursor += x&1; //searches for if there is a 1 in the binary number and sums up number of them
     x >>= 1; //shifts to next bit to search again
   }
   return cursor;
@@ -350,11 +326,15 @@ int ques14(int x) {
 /* question 14 answer */
 int ans14(int x) {
   int temp = 0; 
-  while(x) {
-    temp += x & 1;
-    x >> 1;
+  int count = 0;
+  for(int i = 0; i < 32; i++) {
+    temp = x&1;
+     x = x>>1;
+
+    if(temp == 1)
+        count++;
   }
-  if (count % 2 == 1) {
+  if (count%2 == 1) {
 	  return 1;
   } else {
 	  return 0;
